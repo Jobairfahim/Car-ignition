@@ -916,6 +916,44 @@
     .areas-flex { flex-direction: column; }
   }
 
+  /* ── FLOATING CALL BUTTON ── */
+  .floating-call {
+    position: fixed; bottom: 30px; right: 30px;
+    z-index: 9999;
+    background: var(--accent);
+    color: var(--primary);
+    border: none;
+    border-radius: 50%;
+    width: 64px; height: 64px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(232,160,32,0.4);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    animation: pulse 2s infinite;
+  }
+
+  .floating-call:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 25px rgba(232,160,32,0.5);
+    background: #d4911a;
+  }
+
+  @keyframes pulse {
+    0% { box-shadow: 0 4px 20px rgba(232,160,32,0.4); }
+    50% { box-shadow: 0 4px 25px rgba(232,160,32,0.6); }
+    100% { box-shadow: 0 4px 20px rgba(232,160,32,0.4); }
+  }
+
+  @media (max-width: 768px) {
+    .floating-call {
+      bottom: 20px; right: 20px;
+      width: 56px; height: 56px;
+      font-size: 1.5rem;
+    }
+  }
+
   /* Scroll animations */
   .fade-up {
     opacity: 0; transform: translateY(24px);
@@ -1610,6 +1648,9 @@
     </div>
   </div>
 </footer>
+
+<!-- FLOATING CALL BUTTON -->
+<a href="tel:+14780000000" class="floating-call" aria-label="Call Now">📞</a>
 
 <script>
   // Mobile menu
